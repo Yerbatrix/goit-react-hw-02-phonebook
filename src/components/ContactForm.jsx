@@ -15,7 +15,17 @@ class ContactForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { name, number } = this.state;
+
     if (name.trim() === '' || number.trim() === '') return;
+
+    const isDuplicate = this.props.contacts.some(
+      contact => contact.name === name
+    );
+    if (isDuplicate) {
+      alert('Contact with this name already exists!');
+      return;
+    }
+
     this.props.onSubmit({ id: nanoid(), name, number });
     this.setState({ name: '', number: '' });
   };
@@ -42,7 +52,7 @@ class ContactForm extends Component {
             type="tel"
             name="number"
             id="numberInput"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            pattern="^[0-9]{1,3}[-\s]?[0-9]{1,14}$"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             value={number}
             onChange={this.handleChange}
