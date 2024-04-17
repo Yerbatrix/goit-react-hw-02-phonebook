@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import '../css/ContactForm.css';
 
 class ContactForm extends Component {
   state = {
@@ -33,35 +34,37 @@ class ContactForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="nameInput">
-          Name
-          <input
-            type="text"
-            name="name"
-            id="nameInput"
-            value={name}
-            onChange={this.handleChange}
-            placeholder="Enter name"
-            required
-          />
-        </label>
-        <label htmlFor="numberInput">
-          Phone number
-          <input
-            type="tel"
-            name="number"
-            id="numberInput"
-            pattern="^[0-9]{1,3}[-\s]?[0-9]{1,14}$"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            value={number}
-            onChange={this.handleChange}
-            placeholder="Enter phone number"
-            required
-          />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+      <div className="contact-form-container">
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="nameInput">
+            Name
+            <input
+              type="text"
+              name="name"
+              id="nameInput"
+              value={name}
+              onChange={this.handleChange}
+              placeholder="Enter name"
+              required
+            />
+          </label>
+          <label htmlFor="numberInput">
+            Phone number
+            <input
+              type="tel"
+              name="number"
+              id="numberInput"
+              pattern="^[0-9]{1,3}[-\s]?[0-9]{1,14}$"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              value={number}
+              onChange={this.handleChange}
+              placeholder="Enter phone number"
+              required
+            />
+          </label>
+          <button type="submit">Add contact</button>
+        </form>
+      </div>
     );
   }
 }

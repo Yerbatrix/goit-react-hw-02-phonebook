@@ -1,0 +1,38 @@
+.contact-form-container {
+  border: 1px solid #ccc; /* Dodaj ramkę wokół kontenera formularza */
+  padding: 20px; /* Dodaj wypełnienie wokół formularza */
+  margin-bottom: 20px; /* Dodaj odstęp na dole kontenera formularza */
+  width: 300px; /* Ustaw szerokość kontenera formularza */
+  max-width: 100%; /* Maksymalna szerokość kontenera formularza */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodaj cień */
+  border-radius: 8px; /* Zaokrągl rogi kontenera formularza */
+}
+
+.contact-form-container form label {
+  display: block; /* Ustaw etykiety na blokowe, aby były poniżej siebie */
+  margin-bottom: 10px; /* Dodaj odstęp na dole etykiet */
+}
+
+.contact-form-container form label input[type='text'],
+.contact-form-container form label input[type='tel'] {
+  width: 100%; /* Ustaw szerokość inputów na 100% szerokości kontenera */
+  padding: 8px; /* Dodaj wypełnienie wokół inputów */
+  margin-top: 4px; /* Dodaj odstęp na górze inputów */
+  border: 1px solid #ccc; /* Dodaj obramowanie inputów */
+  border-radius: 4px; /* Zaokrągl rogi inputów */
+}
+
+.contact-form-container form label input[type='submit'] {
+  width: 100%; /* Ustaw szerokość przycisku na 100% szerokości kontenera */
+  padding: 10px; /* Dodaj wypełnienie wokół przycisku */
+  margin-top: 10px; /* Dodaj odstęp na górze przycisku */
+  background-color: #007bff; /* Ustaw kolor tła przycisku */
+  color: #fff; /* Ustaw kolor tekstu przycisku */
+  border: none; /* Usuń obramowanie przycisku */
+  border-radius: 4px; /* Zaokrągl rogi przycisku */
+  cursor: pointer; /* Zmień kursor na wskaźnik */
+}
+
+.contact-form-container form label input[type='submit']:hover {
+  background-color: #0056b3; /* Zmiana koloru tła przycisku po najechaniu */
+}
