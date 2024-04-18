@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import '../css/ContactForm.css';
+import css from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
@@ -34,7 +34,7 @@ class ContactForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <div className="contact-form-container">
+      <div className={css.container}>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="nameInput">
             Name
